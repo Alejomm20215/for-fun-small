@@ -27,12 +27,12 @@ class DigitalClock(QWidget):
             if font_id == -1:
                 raise Exception("Font not found")
             font_family = QFontDatabase.applicationFontFamilies(font_id)[0]
-            my_font = QFont(font_family, 48)  # Reduced font size for better fit
+            my_font = QFont(font_family, 64)  # Reduced font size for better fit
         except:
-            my_font = QFont("Arial", 48, QFont.Bold)
+            my_font = QFont("Arial", 64, QFont.Bold)
         
         self.time_label.setFont(my_font)
-        self.time_label.setStyleSheet("color: #70ff70;")  # Softer green
+        self.time_label.setStyleSheet("color:rgb(9, 253, 9);")  # Softer green
 
         self.timer.timeout.connect(self.update_time)
         self.timer.start(1000)
